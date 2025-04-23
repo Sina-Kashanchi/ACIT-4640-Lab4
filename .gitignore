@@ -1,0 +1,2 @@
+# ignore Terraform’s plugin cache
+.terraform/

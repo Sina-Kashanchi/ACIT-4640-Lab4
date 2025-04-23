@@ -1,0 +1,14 @@
+#cloud-config 
+users:
+  - name: web
+    primary_group: web
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCYPz6Wgxc3dGcjnaqLZ/Jh1Hg4/nHmN/f60Ce367Z85iSZ6avU9u77ZWXZE530cHGPreNoEO01Ev40tZx7l0NnlktZfxRthKX8lzzORuynNV9H2lnf62t6bN4rM2b7sK+eprizbrTqJ8Cu8fIITMZW9FE71KWW4IZaghWSCgfEo4AaylhOyx9BY3X15Tyl/jFjNMdJ9jnhtkLcoqd02ZpIxacDEx3TELOhCAPfYGpNxW3rq6+Z7QqSE1/3UAbP+PgbEoYZVEdPFck24Z9EPDT/Jl07blHmgEr3uQL40kt5iNIV6JOsNjhRNygoZ9dowAIPqcWp3xs+9cJq7UK/JV0osFHpnvgF3bnPRayRuvq2X8djCRHPWUArNZLymzlz0CjzmBx9KT7A9FbZ3uLwkY/RYVVneLbP2IYt5h1gijNVxHY+K3ZcyFLpXaRciZuELbpetRuZQIveYr1WbsI01jKCMqr56hQNIpJM6WHWdoN9BwuqGlCbDnS9SVZ9KkEsn7Gmj4uuTsoO8xJB3kG6nZUiWC6tLCecENyiEPahgofaISyESvID7jGRMveOjMZNcRyQM1kc4sUcKrfIzh5WAvONMabnkDHsfdMnGILL+Xg9YwRuzs3pZNdn2ElIjFjNW/bPDZezzCgfaVvGE2oHhkanleESdLaTylb1TkXcgxmgWQ== your-email@example.com
+
+package_update: true
+packages:
+  - nginx
+  - nmap
