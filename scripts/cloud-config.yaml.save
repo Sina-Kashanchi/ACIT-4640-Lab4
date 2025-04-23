@@ -1,0 +1,14 @@
+#cloud-config
+users:
+ssh -i "id_rsa" ubuntu@ec2-34-217-64-251.us-west-2.compute.amazonaws.comssh -i "id_rsa" ubuntu@ec2-34-217-64-251.us-west-2.compute.amazonaws.com  - name: web
+    primary_group: web
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCa+8IZQC0CdO1dkzL8K5Lie/5IQftCafg96YKlHlGeCcJ9vHoEXuhu3QUzJDwbOmeHofZ7/FKv5nmWhR7OcbT05LtCkMyFNw51T+73+xLOTqIB9Iq10Q7IMCyez9UA+cXFfalBDM+PSTrziJd44wkdYuienkSEIpb96kOdjpmH50wMUL2AB7natRA0tSKpDcHR3Gzio5GwB7FrQhe7BTPAfhFYrNJw5pSBilqCg7g+600lFlCEndZXcKiwuXfM6qbbhIGaRY9ChzBfr4AcLNf77R4ysF3lusnUE7GipVFAcvG+HjkHj21squivS2znBtY80DmU/oGtlT+RCTjPeLuZNL7GV88dEG006vPjGFYb2O6+O9cDPQcburIj7JACh3V9wFz9NHc6SHalv9G5V/CclZ5n19rf9rdUD4aDMoafF4shl60cnXYOlf6XZlMPihStj//TFjDXBjpbXsfhitISjViv2xFzLfwA8JqtCXtRo1JqkEO/Pvehn2Iwz/xufXpDCm3LSjkJOV+kEGCb4hgcM8r44hLQCnxpsMWvZxHORS3glZYNEf1xUeMPc63grcRGUUaUkhff949vPh0ggLp8Yn5BeGawi7RNw+oYNyBnYKtDUmf1nAsTM3bXCelHXDInWdBx+6PgE9kKXvBGZnq3g0WNliH8+cqmCKogqP3RWw== sina.kashanchi@gmail.com
+
+package_update: true
+packages:
+  - nginx
+  - nmap
